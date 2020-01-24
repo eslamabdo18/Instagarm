@@ -16,6 +16,7 @@
 		FC16F03423D7D2620082BD2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC16F03223D7D2620082BD2D /* LaunchScreen.storyboard */; };
 		FC41639E23DB3D850061F1A4 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41639D23DB3D850061F1A4 /* MainTabBarController.swift */; };
 		FC4163A023DB475A0061F1A4 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41639F23DB475A0061F1A4 /* UserProfileController.swift */; };
+		FC4163A323DB59FF0061F1A4 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4163A223DB59FF0061F1A4 /* UserProfileHeader.swift */; };
 		FC6E6D6623D891B1003CFAAA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E6D6523D891B1003CFAAA /* Extensions.swift */; };
 		FCC98A4C23D8E7C300DBAD2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCC98A4B23D8E7C300DBAD2E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		FC16F03523D7D2620082BD2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC41639D23DB3D850061F1A4 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FC41639F23DB475A0061F1A4 /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
+		FC4163A223DB59FF0061F1A4 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
 		FC6E6D6523D891B1003CFAAA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FCC98A4B23D8E7C300DBAD2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,10 +90,10 @@
 		FC16F02623D7D2600082BD2D /* instagram */ = {
 			isa = PBXGroup;
 			children = (
+				FC4163A123DB59DD0061F1A4 /* UserProfile */,
 				FC6E6D6423D89187003CFAAA /* Utilis */,
 				FC16F02723D7D2600082BD2D /* AppDelegate.swift */,
 				FC41639D23DB3D850061F1A4 /* MainTabBarController.swift */,
-				FC41639F23DB475A0061F1A4 /* UserProfileController.swift */,
 				FC16F02923D7D2600082BD2D /* SceneDelegate.swift */,
 				FC16F02B23D7D2600082BD2D /* ViewController.swift */,
 				FC16F02D23D7D2600082BD2D /* Main.storyboard */,
@@ -101,6 +103,15 @@
 				FCC98A4B23D8E7C300DBAD2E /* GoogleService-Info.plist */,
 			);
 			path = instagram;
+			sourceTree = "<group>";
+		};
+		FC4163A123DB59DD0061F1A4 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				FC41639F23DB475A0061F1A4 /* UserProfileController.swift */,
+				FC4163A223DB59FF0061F1A4 /* UserProfileHeader.swift */,
+			);
+			path = UserProfile;
 			sourceTree = "<group>";
 		};
 		FC6E6D6423D89187003CFAAA /* Utilis */ = {
@@ -228,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC16F02C23D7D2600082BD2D /* ViewController.swift in Sources */,
+				FC4163A323DB59FF0061F1A4 /* UserProfileHeader.swift in Sources */,
 				FC16F02823D7D2600082BD2D /* AppDelegate.swift in Sources */,
 				FC4163A023DB475A0061F1A4 /* UserProfileController.swift in Sources */,
 				FC41639E23DB3D850061F1A4 /* MainTabBarController.swift in Sources */,
