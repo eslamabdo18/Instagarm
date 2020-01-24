@@ -143,7 +143,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         plusPhotoButton.Anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 70, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, height: 140, width: 140)
         setUpInputField()
         
-       
     }
 
     fileprivate func setUpInputField(){
