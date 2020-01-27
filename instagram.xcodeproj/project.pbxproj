@@ -14,6 +14,7 @@
 		FC16F02F23D7D2600082BD2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC16F02D23D7D2600082BD2D /* Main.storyboard */; };
 		FC16F03123D7D2620082BD2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC16F03023D7D2620082BD2D /* Assets.xcassets */; };
 		FC16F03423D7D2620082BD2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC16F03223D7D2620082BD2D /* LaunchScreen.storyboard */; };
+		FC37A5AE23DDC48E00E8D3CA /* logingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC37A5AD23DDC48E00E8D3CA /* logingViewController.swift */; };
 		FC41639E23DB3D850061F1A4 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41639D23DB3D850061F1A4 /* MainTabBarController.swift */; };
 		FC4163A023DB475A0061F1A4 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41639F23DB475A0061F1A4 /* UserProfileController.swift */; };
 		FC4163A323DB59FF0061F1A4 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4163A223DB59FF0061F1A4 /* UserProfileHeader.swift */; };
@@ -33,6 +34,7 @@
 		FC16F03023D7D2620082BD2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC16F03323D7D2620082BD2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC16F03523D7D2620082BD2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC37A5AD23DDC48E00E8D3CA /* logingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logingViewController.swift; sourceTree = "<group>"; };
 		FC41639D23DB3D850061F1A4 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FC41639F23DB475A0061F1A4 /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		FC4163A223DB59FF0061F1A4 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
@@ -90,12 +92,12 @@
 		FC16F02623D7D2600082BD2D /* instagram */ = {
 			isa = PBXGroup;
 			children = (
+				FC37A5AC23DDC44D00E8D3CA /* Login */,
 				FC4163A123DB59DD0061F1A4 /* UserProfile */,
 				FC6E6D6423D89187003CFAAA /* Utilis */,
 				FC16F02723D7D2600082BD2D /* AppDelegate.swift */,
 				FC41639D23DB3D850061F1A4 /* MainTabBarController.swift */,
 				FC16F02923D7D2600082BD2D /* SceneDelegate.swift */,
-				FC16F02B23D7D2600082BD2D /* ViewController.swift */,
 				FC16F02D23D7D2600082BD2D /* Main.storyboard */,
 				FC16F03023D7D2620082BD2D /* Assets.xcassets */,
 				FC16F03223D7D2620082BD2D /* LaunchScreen.storyboard */,
@@ -103,6 +105,15 @@
 				FCC98A4B23D8E7C300DBAD2E /* GoogleService-Info.plist */,
 			);
 			path = instagram;
+			sourceTree = "<group>";
+		};
+		FC37A5AC23DDC44D00E8D3CA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FC16F02B23D7D2600082BD2D /* ViewController.swift */,
+				FC37A5AD23DDC48E00E8D3CA /* logingViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		FC4163A123DB59DD0061F1A4 /* UserProfile */ = {
@@ -242,6 +253,7 @@
 				FC4163A323DB59FF0061F1A4 /* UserProfileHeader.swift in Sources */,
 				FC16F02823D7D2600082BD2D /* AppDelegate.swift in Sources */,
 				FC4163A023DB475A0061F1A4 /* UserProfileController.swift in Sources */,
+				FC37A5AE23DDC48E00E8D3CA /* logingViewController.swift in Sources */,
 				FC41639E23DB3D850061F1A4 /* MainTabBarController.swift in Sources */,
 				FC16F02A23D7D2600082BD2D /* SceneDelegate.swift in Sources */,
 				FC6E6D6623D891B1003CFAAA /* Extensions.swift in Sources */,

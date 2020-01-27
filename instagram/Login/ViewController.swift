@@ -138,6 +138,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        navigationController?.isNavigationBarHidden = true
+        view.backgroundColor = .white
         view.addSubview(plusPhotoButton)
         plusPhotoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive=true
         plusPhotoButton.Anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 70, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, height: 140, width: 140)
