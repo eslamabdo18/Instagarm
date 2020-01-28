@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 class logingViewController:UIViewController {
     
     let logoContainer:UIView = {
@@ -31,7 +31,7 @@ class logingViewController:UIViewController {
         textField.font = UIFont.systemFont(ofSize: 14)
         textField.textColor = .black
         textField.translatesAutoresizingMaskIntoConstraints = false
-        //textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
+        textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return textField
     }()
     let password:UITextField = {
@@ -44,7 +44,7 @@ class logingViewController:UIViewController {
            textField.isSecureTextEntry = true
                  textField.font = UIFont.systemFont(ofSize: 14)
                  textField.translatesAutoresizingMaskIntoConstraints = false
-            //textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
+            textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
                  return textField
     }()
     let loginButton:UIButton = {
@@ -55,7 +55,7 @@ class logingViewController:UIViewController {
         bt.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         bt.setTitleColor(.white, for: .normal)
         bt.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
-        //bt.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
+        bt.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         bt.isEnabled  = false
         return bt
     }()
@@ -85,6 +85,35 @@ class logingViewController:UIViewController {
         signUpButton.Anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, height: 50, width: 0)
         
         setupInfo()
+    }
+    
+    @objc func handleLogin() {
+        guard let email =  emailTextField.text, email.count > 0 else{return}
+        guard let pass = password.text, pass.count > 0 else{return}
+        Auth.auth().signIn(withEmail: email, password: pass) { (result, error) in
+            
+            if let error = error {
+                print(error)
+                return
+            }
+            print("done",result?.user.uid)
+            guard let maintab = UIApplication.shared.keyWindow?.rootViewController as? MainTabBarController else{return}
+            maintab.setUpView()
+            self.dismiss(animated: true, completion: nil)
+            
+        }
+    }
+    @objc func handleTextInputChange() {
+        
+        let isValidForm = emailTextField.text!.count>0 && password.text!.count>0
+        
+        if isValidForm{
+                   loginButton.backgroundColor = UIColor.rgb(red: 17, green: 154, blue: 237)
+                   loginButton.isEnabled = true
+               }else{
+                   loginButton.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
+                   loginButton.isEnabled = false
+               }
     }
     
     func setupInfo() {

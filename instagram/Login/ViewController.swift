@@ -78,6 +78,17 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
          textField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
               return textField
           }()
+    let alreadyHaveAccButton:UIButton={
+        let bt = UIButton(type: .system)
+        let attrTitle = NSMutableAttributedString(string: "already have accoount?", attributes: [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 14),NSAttributedString.Key.foregroundColor:UIColor.lightGray])
+        attrTitle.append(NSAttributedString(string: "Login", attributes: [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 14),NSAttributedString.Key.foregroundColor:UIColor.rgb(red: 17, green: 153, blue: 237)]))
+        bt.setAttributedTitle(attrTitle, for: .normal)
+        bt.addTarget(self, action: #selector(haveAccHandler), for: .touchUpInside)
+        return bt
+    }()
+    @objc func haveAccHandler() {
+        navigationController?.popViewController(animated: true)
+    }
     @objc func handleTextInputChange(){
         
         let isValidForm = emailTextField.text!.count>0 && password.text!.count>0 && userName.text!.count > 0
@@ -127,6 +138,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                             return
                         }
                             print("Successfully created user and saved information to database")
+                        guard let maintab = UIApplication.shared.keyWindow?.rootViewController as? MainTabBarController else{return}
+                                   maintab.setUpView()
+                                   self.dismiss(animated: true, completion: nil)
                     
                     }
                 }
@@ -144,6 +158,11 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         plusPhotoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive=true
         plusPhotoButton.Anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 70, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, height: 140, width: 140)
         setUpInputField()
+        
+        view.addSubview(alreadyHaveAccButton)
+               
+               alreadyHaveAccButton.Anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, height: 50, width: 0)
+               
         
     }
 
