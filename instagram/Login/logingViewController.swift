@@ -96,7 +96,7 @@ class logingViewController:UIViewController {
                 print(error)
                 return
             }
-            print("done",result?.user.uid)
+            print("done",result?.user.uid ?? "")
             guard let maintab = UIApplication.shared.keyWindow?.rootViewController as? MainTabBarController else{return}
             maintab.setUpView()
             self.dismiss(animated: true, completion: nil)

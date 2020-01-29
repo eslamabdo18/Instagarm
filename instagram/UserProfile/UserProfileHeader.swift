@@ -139,7 +139,7 @@ class UserProfileHeader: UICollectionViewCell {
         guard let image = user?.image else {return}
         let url = URL(string: image)
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            print(data)
+            print(data ?? "")
           let image = UIImage(data: data!)
           DispatchQueue.main.async {
               self.profileImage.image = image

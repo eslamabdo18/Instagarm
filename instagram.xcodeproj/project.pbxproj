@@ -19,6 +19,7 @@
 		FC4163A023DB475A0061F1A4 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41639F23DB475A0061F1A4 /* UserProfileController.swift */; };
 		FC4163A323DB59FF0061F1A4 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4163A223DB59FF0061F1A4 /* UserProfileHeader.swift */; };
 		FC6E6D6623D891B1003CFAAA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E6D6523D891B1003CFAAA /* Extensions.swift */; };
+		FCC5F51123E0AA3F00185AFA /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5F51023E0AA3F00185AFA /* HomeController.swift */; };
 		FCC98A4C23D8E7C300DBAD2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCC98A4B23D8E7C300DBAD2E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		FC41639F23DB475A0061F1A4 /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		FC4163A223DB59FF0061F1A4 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
 		FC6E6D6523D891B1003CFAAA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FCC5F51023E0AA3F00185AFA /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		FCC98A4B23D8E7C300DBAD2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 		FC16F02623D7D2600082BD2D /* instagram */ = {
 			isa = PBXGroup;
 			children = (
+				FCC5F50F23E0AA1900185AFA /* Home */,
 				FC37A5AC23DDC44D00E8D3CA /* Login */,
 				FC4163A123DB59DD0061F1A4 /* UserProfile */,
 				FC6E6D6423D89187003CFAAA /* Utilis */,
@@ -131,6 +134,14 @@
 				FC6E6D6523D891B1003CFAAA /* Extensions.swift */,
 			);
 			path = Utilis;
+			sourceTree = "<group>";
+		};
+		FCC5F50F23E0AA1900185AFA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FCC5F51023E0AA3F00185AFA /* HomeController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +265,7 @@
 				FC16F02823D7D2600082BD2D /* AppDelegate.swift in Sources */,
 				FC4163A023DB475A0061F1A4 /* UserProfileController.swift in Sources */,
 				FC37A5AE23DDC48E00E8D3CA /* logingViewController.swift in Sources */,
+				FCC5F51123E0AA3F00185AFA /* HomeController.swift in Sources */,
 				FC41639E23DB3D850061F1A4 /* MainTabBarController.swift in Sources */,
 				FC16F02A23D7D2600082BD2D /* SceneDelegate.swift in Sources */,
 				FC6E6D6623D891B1003CFAAA /* Extensions.swift in Sources */,

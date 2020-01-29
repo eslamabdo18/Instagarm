@@ -119,7 +119,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         Storage.storage().reference().child("profileImage").child(fileName).putData(uploded!, metadata: nil) { (meta, error) in
             
             if let error = error{
-                print("error while uploading")
+                print("error while uploading",error)
                 return
             }
             print("done uploading")
@@ -134,7 +134,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                     Database.database().reference().child("users").updateChildValues(values) { (err, ref) in
                         
                         if let err = err{
-                            print("failed")
+                            print("failed",err)
                             return
                         }
                             print("Successfully created user and saved information to database")
