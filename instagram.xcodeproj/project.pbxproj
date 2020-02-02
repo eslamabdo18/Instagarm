@@ -20,8 +20,11 @@
 		FC4163A323DB59FF0061F1A4 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4163A223DB59FF0061F1A4 /* UserProfileHeader.swift */; };
 		FC6E6D6623D891B1003CFAAA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E6D6523D891B1003CFAAA /* Extensions.swift */; };
 		FCBB598D23E1C59F0006793F /* PhotoSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB598C23E1C59F0006793F /* PhotoSelectorController.swift */; };
+		FCBB598F23E1F79F0006793F /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB598E23E1F79F0006793F /* PhotoCell.swift */; };
+		FCBB599123E203AB0006793F /* PhotoSelectorHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB599023E203AB0006793F /* PhotoSelectorHeader.swift */; };
 		FCC5F51123E0AA3F00185AFA /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5F51023E0AA3F00185AFA /* HomeController.swift */; };
 		FCC98A4C23D8E7C300DBAD2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCC98A4B23D8E7C300DBAD2E /* GoogleService-Info.plist */; };
+		FCD7678223E7367100565523 /* SharePhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD7678123E7367100565523 /* SharePhotoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +45,11 @@
 		FC4163A223DB59FF0061F1A4 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
 		FC6E6D6523D891B1003CFAAA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FCBB598C23E1C59F0006793F /* PhotoSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorController.swift; sourceTree = "<group>"; };
+		FCBB598E23E1F79F0006793F /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		FCBB599023E203AB0006793F /* PhotoSelectorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorHeader.swift; sourceTree = "<group>"; };
 		FCC5F51023E0AA3F00185AFA /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		FCC98A4B23D8E7C300DBAD2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FCD7678123E7367100565523 /* SharePhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePhotoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,9 @@
 			isa = PBXGroup;
 			children = (
 				FCBB598C23E1C59F0006793F /* PhotoSelectorController.swift */,
+				FCBB598E23E1F79F0006793F /* PhotoCell.swift */,
+				FCBB599023E203AB0006793F /* PhotoSelectorHeader.swift */,
+				FCD7678123E7367100565523 /* SharePhotoController.swift */,
 			);
 			path = AddPhoto;
 			sourceTree = "<group>";
@@ -271,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCBB599123E203AB0006793F /* PhotoSelectorHeader.swift in Sources */,
 				FC16F02C23D7D2600082BD2D /* ViewController.swift in Sources */,
 				FC4163A323DB59FF0061F1A4 /* UserProfileHeader.swift in Sources */,
 				FC16F02823D7D2600082BD2D /* AppDelegate.swift in Sources */,
@@ -278,8 +288,10 @@
 				FC37A5AE23DDC48E00E8D3CA /* logingViewController.swift in Sources */,
 				FCC5F51123E0AA3F00185AFA /* HomeController.swift in Sources */,
 				FC41639E23DB3D850061F1A4 /* MainTabBarController.swift in Sources */,
+				FCD7678223E7367100565523 /* SharePhotoController.swift in Sources */,
 				FC16F02A23D7D2600082BD2D /* SceneDelegate.swift in Sources */,
 				FC6E6D6623D891B1003CFAAA /* Extensions.swift in Sources */,
+				FCBB598F23E1F79F0006793F /* PhotoCell.swift in Sources */,
 				FCBB598D23E1C59F0006793F /* PhotoSelectorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
