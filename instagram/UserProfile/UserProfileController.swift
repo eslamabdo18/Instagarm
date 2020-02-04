@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 class UserProfileController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
     
+    var posts = [Post]()
     let cellID = "cellid"
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +22,44 @@ class UserProfileController: UICollectionViewController,UICollectionViewDelegate
         
         collectionView?.register(UserProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellID)
+        collectionView.register(ProfilePhotoCell.self, forCellWithReuseIdentifier: cellID)
         
         setupLogOut()
+        
+        //setupPosts()
+        fetchOrderdPosts()
     }
+    func fetchOrderdPosts(){
+        guard let userId = Auth.auth().currentUser?.uid else {return}
+        let ref = Database.database().reference().child("posts").child(userId)
+        ref.queryOrdered(byChild: "date").observe(.childAdded, with: { (snapshot) in
+            
+            guard let dict = snapshot.value as? [String:Any] else {return}
+            let post = Post(dict: dict)
+            self.posts.append(post)
+            self.collectionView.reloadData()
+            
+        }) { (err) in
+            print("failed to fetch post",err)
+        }
+    }
+    func setupPosts(){
+        guard let userId = Auth.auth().currentUser?.uid else {return}
+        let ref = Database.database().reference().child("posts").child(userId)
+        ref.observeSingleEvent(of: .value, andPreviousSiblingKeyWith: { (snapshot, string) in
+            
+            guard let dict = snapshot.value as? [String:Any] else{return}
+            dict.forEach { (key,value) in
+                guard let valuesDict = value as? [String:Any] else{return}
+                let post = Post(dict: valuesDict)
+                self.posts.append(post)
+            }
+            self.collectionView.reloadData()
+        }) { (err) in
+            print("failed to catch post:",err)
+        }
+    }
+    
     fileprivate func setupLogOut(){
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "gear")?.withRenderingMode(.alwaysOriginal), landscapeImagePhone: UIImage(named: "gear"), style: .plain, target: self, action: #selector(logOut))
@@ -60,11 +95,12 @@ class UserProfileController: UICollectionViewController,UICollectionViewDelegate
         return header!
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        15
+        return posts.count
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
-        cell.backgroundColor = .purple
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! ProfilePhotoCell
+        
+         cell.post = posts[indexPath.item]
         return cell
     }
     
@@ -99,7 +135,6 @@ class UserProfileController: UICollectionViewController,UICollectionViewDelegate
 struct User {
     let username:String
     let image:String
-    
     init(dict:[String:Any]) {
         self.username = dict["username"] as? String ?? ""
         self.image = dict["profileImageURL"] as? String ?? ""

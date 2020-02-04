@@ -12,12 +12,13 @@ class UserProfileHeader: UICollectionViewCell {
     
     var user:User?{
         didSet{
-             setupProfileImage()
+            guard let image = user?.image else {return}
+            profileImage.loadImage(urlString: image)
             usernameLabel.text = user?.username
         }
     }
-    let profileImage:UIImageView = {
-        let iv = UIImageView()
+    let profileImage:CustomImageView = {
+        let iv = CustomImageView()
         iv.backgroundColor = .red
         iv.layer.cornerRadius  = 80/2
         iv.clipsToBounds = true
@@ -62,7 +63,7 @@ class UserProfileHeader: UICollectionViewCell {
     }()
     let followersLabel:UILabel = {
           let label = UILabel()
-           let atteText = NSMutableAttributedString(string: "11\n", attributes: [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 14)])
+           let atteText = NSMutableAttributedString(string: "0\n", attributes: [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 14)])
            atteText.append(NSAttributedString(string: "Followers", attributes: [NSAttributedString.Key.foregroundColor:UIColor.lightGray,NSAttributedString.Key.font:UIFont.systemFont(ofSize: 14)]))
            label.attributedText = atteText
            label.textColor = .black
@@ -72,7 +73,7 @@ class UserProfileHeader: UICollectionViewCell {
        }()
     let followingLabel:UILabel = {
           let label = UILabel()
-        let atteText = NSMutableAttributedString(string: "11\n", attributes: [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 14)])
+        let atteText = NSMutableAttributedString(string: "0\n", attributes: [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 14)])
         atteText.append(NSAttributedString(string: "following", attributes: [NSAttributedString.Key.foregroundColor:UIColor.lightGray,NSAttributedString.Key.font:UIFont.systemFont(ofSize: 14)]))
         label.attributedText = atteText
            label.textColor = .black
@@ -134,18 +135,6 @@ class UserProfileHeader: UICollectionViewCell {
         
          bottomDiv.Anchor(top: stackView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, height: 0.5, width: 0)
         
-    }
-    func setupProfileImage(){
-        guard let image = user?.image else {return}
-        let url = URL(string: image)
-        URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            print(data ?? "")
-          let image = UIImage(data: data!)
-          DispatchQueue.main.async {
-              self.profileImage.image = image
-          }
-
-        }.resume()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
