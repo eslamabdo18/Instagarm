@@ -11,6 +11,7 @@ import UIKit
 class ProfilePhotoCell:UICollectionViewCell{
     var post:Post? {
         didSet{
+            
             guard let image = post?.imageUrl else {return}
             imageView.loadImage(urlString: image)
         }
