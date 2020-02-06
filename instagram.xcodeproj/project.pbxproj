@@ -14,6 +14,7 @@
 		FC16F02F23D7D2600082BD2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC16F02D23D7D2600082BD2D /* Main.storyboard */; };
 		FC16F03123D7D2620082BD2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC16F03023D7D2620082BD2D /* Assets.xcassets */; };
 		FC16F03423D7D2620082BD2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC16F03223D7D2620082BD2D /* LaunchScreen.storyboard */; };
+		FC1BE42723EB8C4600AFEBCF /* FireBaseUtilis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BE42623EB8C4600AFEBCF /* FireBaseUtilis.swift */; };
 		FC37A5AE23DDC48E00E8D3CA /* logingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC37A5AD23DDC48E00E8D3CA /* logingViewController.swift */; };
 		FC41639E23DB3D850061F1A4 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41639D23DB3D850061F1A4 /* MainTabBarController.swift */; };
 		FC4163A023DB475A0061F1A4 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41639F23DB475A0061F1A4 /* UserProfileController.swift */; };
@@ -21,11 +22,13 @@
 		FC6E6D6623D891B1003CFAAA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E6D6523D891B1003CFAAA /* Extensions.swift */; };
 		FC97D1FB23E85B0D009252B4 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC97D1FA23E85B0D009252B4 /* Post.swift */; };
 		FC97D1FD23E85EC6009252B4 /* ProfilePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC97D1FC23E85EC6009252B4 /* ProfilePhotoCell.swift */; };
+		FCAADE4023EA0CC2002E5A22 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAADE3F23EA0CC2002E5A22 /* User.swift */; };
 		FCBB598D23E1C59F0006793F /* PhotoSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB598C23E1C59F0006793F /* PhotoSelectorController.swift */; };
 		FCBB598F23E1F79F0006793F /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB598E23E1F79F0006793F /* PhotoCell.swift */; };
 		FCBB599123E203AB0006793F /* PhotoSelectorHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB599023E203AB0006793F /* PhotoSelectorHeader.swift */; };
 		FCC5F51123E0AA3F00185AFA /*  HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5F51023E0AA3F00185AFA /*  HomeController.swift */; };
 		FCC98A4C23D8E7C300DBAD2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCC98A4B23D8E7C300DBAD2E /* GoogleService-Info.plist */; };
+		FCCF381523EC543F008B796C /* UserSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCF381423EC543F008B796C /* UserSearchController.swift */; };
 		FCD5C83723E90067008CC0FF /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5C83623E90067008CC0FF /* CustomImageView.swift */; };
 		FCD5C83923E90B65008CC0FF /* HomePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5C83823E90B65008CC0FF /* HomePostCell.swift */; };
 		FCD7678223E7367100565523 /* SharePhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD7678123E7367100565523 /* SharePhotoController.swift */; };
@@ -43,6 +46,7 @@
 		FC16F03023D7D2620082BD2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC16F03323D7D2620082BD2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC16F03523D7D2620082BD2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC1BE42623EB8C4600AFEBCF /* FireBaseUtilis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseUtilis.swift; sourceTree = "<group>"; };
 		FC37A5AD23DDC48E00E8D3CA /* logingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logingViewController.swift; sourceTree = "<group>"; };
 		FC41639D23DB3D850061F1A4 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FC41639F23DB475A0061F1A4 /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
@@ -50,11 +54,13 @@
 		FC6E6D6523D891B1003CFAAA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FC97D1FA23E85B0D009252B4 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FC97D1FC23E85EC6009252B4 /* ProfilePhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoCell.swift; sourceTree = "<group>"; };
+		FCAADE3F23EA0CC2002E5A22 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FCBB598C23E1C59F0006793F /* PhotoSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorController.swift; sourceTree = "<group>"; };
 		FCBB598E23E1F79F0006793F /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		FCBB599023E203AB0006793F /* PhotoSelectorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorHeader.swift; sourceTree = "<group>"; };
 		FCC5F51023E0AA3F00185AFA /*  HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " HomeController.swift"; sourceTree = "<group>"; };
 		FCC98A4B23D8E7C300DBAD2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FCCF381423EC543F008B796C /* UserSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchController.swift; sourceTree = "<group>"; };
 		FCD5C83623E90067008CC0FF /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		FCD5C83823E90B65008CC0FF /* HomePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostCell.swift; sourceTree = "<group>"; };
 		FCD7678123E7367100565523 /* SharePhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePhotoController.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 			children = (
 				FC97D1F923E85AE5009252B4 /* Models */,
 				FCBB598B23E1C5650006793F /* AddPhoto */,
+				FCCF381323EC5392008B796C /* Search */,
 				FCC5F50F23E0AA1900185AFA /* Home */,
 				FC37A5AC23DDC44D00E8D3CA /* Login */,
 				FC4163A123DB59DD0061F1A4 /* UserProfile */,
@@ -152,6 +159,7 @@
 			children = (
 				FC6E6D6523D891B1003CFAAA /* Extensions.swift */,
 				FCD5C83623E90067008CC0FF /* CustomImageView.swift */,
+				FC1BE42623EB8C4600AFEBCF /* FireBaseUtilis.swift */,
 			);
 			path = Utilis;
 			sourceTree = "<group>";
@@ -160,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				FC97D1FA23E85B0D009252B4 /* Post.swift */,
+				FCAADE3F23EA0CC2002E5A22 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +191,14 @@
 				FCD5C83823E90B65008CC0FF /* HomePostCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		FCCF381323EC5392008B796C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FCCF381423EC543F008B796C /* UserSearchController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,12 +325,15 @@
 				FC16F02823D7D2600082BD2D /* AppDelegate.swift in Sources */,
 				FC4163A023DB475A0061F1A4 /* UserProfileController.swift in Sources */,
 				FC97D1FB23E85B0D009252B4 /* Post.swift in Sources */,
+				FC1BE42723EB8C4600AFEBCF /* FireBaseUtilis.swift in Sources */,
 				FC37A5AE23DDC48E00E8D3CA /* logingViewController.swift in Sources */,
+				FCCF381523EC543F008B796C /* UserSearchController.swift in Sources */,
 				FCC5F51123E0AA3F00185AFA /*  HomeController.swift in Sources */,
 				FCD5C83723E90067008CC0FF /* CustomImageView.swift in Sources */,
 				FC41639E23DB3D850061F1A4 /* MainTabBarController.swift in Sources */,
 				FCD7678223E7367100565523 /* SharePhotoController.swift in Sources */,
 				FC16F02A23D7D2600082BD2D /* SceneDelegate.swift in Sources */,
+				FCAADE4023EA0CC2002E5A22 /* User.swift in Sources */,
 				FC6E6D6623D891B1003CFAAA /* Extensions.swift in Sources */,
 				FCBB598F23E1F79F0006793F /* PhotoCell.swift in Sources */,
 				FCBB598D23E1C59F0006793F /* PhotoSelectorController.swift in Sources */,

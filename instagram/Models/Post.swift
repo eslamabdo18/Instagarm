@@ -9,9 +9,12 @@
 import Foundation
 
 struct Post {
+    let user:User
     let imageUrl:String
-    
-    init(dict:[String:Any]) {
+    let caption:String
+    init(user:User,dict:[String:Any]) {
+        self.user = user
         imageUrl = dict["imageUrl"] as? String ?? ""
+        caption = dict["caption"] as? String ?? ""
     }
 }

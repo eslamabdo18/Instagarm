@@ -26,7 +26,6 @@ class UserProfileController: UICollectionViewController,UICollectionViewDelegate
         
         setupLogOut()
         
-        //setupPosts()
         fetchOrderdPosts()
     }
     func fetchOrderdPosts(){
@@ -35,28 +34,13 @@ class UserProfileController: UICollectionViewController,UICollectionViewDelegate
         ref.queryOrdered(byChild: "date").observe(.childAdded, with: { (snapshot) in
             
             guard let dict = snapshot.value as? [String:Any] else {return}
-            let post = Post(dict: dict)
-            self.posts.append(post)
+            guard let user = self.user else {return}
+            let post = Post(user:user,dict: dict)
+            self.posts.insert(post, at: 0)
             self.collectionView.reloadData()
             
         }) { (err) in
             print("failed to fetch post",err)
-        }
-    }
-    func setupPosts(){
-        guard let userId = Auth.auth().currentUser?.uid else {return}
-        let ref = Database.database().reference().child("posts").child(userId)
-        ref.observeSingleEvent(of: .value, andPreviousSiblingKeyWith: { (snapshot, string) in
-            
-            guard let dict = snapshot.value as? [String:Any] else{return}
-            dict.forEach { (key,value) in
-                guard let valuesDict = value as? [String:Any] else{return}
-                let post = Post(dict: valuesDict)
-                self.posts.append(post)
-            }
-            self.collectionView.reloadData()
-        }) { (err) in
-            print("failed to catch post:",err)
         }
     }
     
@@ -120,23 +104,15 @@ class UserProfileController: UICollectionViewController,UICollectionViewDelegate
     }
     var user:User?
     func fetchUser(){
+        
         guard let uid = Auth.auth().currentUser?.uid else {return}
-        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, andPreviousSiblingKeyWith: { (snapshot, string) in
-            guard let dict = snapshot.value as? [String:Any] else{return}
-            self.user = User(dict:dict)
+        Database.fetchUserWithUid(uid: uid) { (user) in
+
+            self.user = user
             self.navigationItem.title = self.user?.username
             self.collectionView?.reloadData()
-        }) { (error) in
-            print("failed to fetch data")
         }
     }
 }
 
-struct User {
-    let username:String
-    let image:String
-    init(dict:[String:Any]) {
-        self.username = dict["username"] as? String ?? ""
-        self.image = dict["profileImageURL"] as? String ?? ""
-    }
-}
+

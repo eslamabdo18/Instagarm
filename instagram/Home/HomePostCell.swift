@@ -13,6 +13,10 @@ class HomePostCell:UICollectionViewCell{
         didSet{
             guard let image = post?.imageUrl else{return}
             photoImageView.loadImage(urlString: image)
+            usernameLabel.text = post?.user.username
+            guard let userimage = post?.user.image else{return}
+            userProfileImageView.loadImage(urlString: userimage)
+            setupAttr()
         }
     }
     let photoImageView:CustomImageView = {
@@ -32,6 +36,7 @@ class HomePostCell:UICollectionViewCell{
         let label = UILabel()
         label.text = "Username"
         label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.textColor  = .black
         return label
     }()
     let optionsButton:UIButton={
@@ -61,6 +66,24 @@ class HomePostCell:UICollectionViewCell{
         bt.setImage(UIImage(named: "ribbon")?.withRenderingMode(.alwaysOriginal), for: .normal)
         return bt
     }()
+    let captionLabel:UILabel = {
+        let label = UILabel()
+        let attrText = NSMutableAttributedString(string: "Username", attributes: [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 12)])
+        
+        attrText.append(NSMutableAttributedString(string: " Anything till now.....", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 12)]))
+        
+        attrText.append(NSMutableAttributedString(string: "\n\n", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 4)]))
+        
+        
+        attrText.append(NSAttributedString(string: "1 week ago", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 12),NSAttributedString.Key.foregroundColor:UIColor.gray]))
+        
+        label.numberOfLines = 0
+        
+        label.textColor = .black
+        
+        label.attributedText = attrText
+        return label
+    }()
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -84,8 +107,24 @@ class HomePostCell:UICollectionViewCell{
        
         setupActionButtons()
         
+        addSubview(captionLabel)
+        captionLabel.Anchor(top: likeButton.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, height: 0, width: 0)
     }
-    
+    func setupAttr(){
+        
+        guard let post = self.post else {return}
+        
+        let attrText = NSMutableAttributedString(string: post.user.username, attributes: [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 12)])
+               
+        attrText.append(NSMutableAttributedString(string: " \(post.caption)", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 12)]))
+               
+        attrText.append(NSMutableAttributedString(string: "\n\n", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 4)]))
+               
+               
+        attrText.append(NSAttributedString(string: "1 week ago", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 12),NSAttributedString.Key.foregroundColor:UIColor.gray]))
+        
+        captionLabel.attributedText = attrText
+    }
     func setupActionButtons(){
         let stackView = UIStackView(arrangedSubviews: [likeButton,commentButton,sendButton])
         stackView.distribution = .fillEqually

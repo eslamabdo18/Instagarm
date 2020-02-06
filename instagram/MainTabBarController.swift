@@ -35,7 +35,7 @@ class MainTabBarController: UITabBarController,UITabBarControllerDelegate {
         //Home
         let homeNavController = tempNavController(rootController: HomeController(collectionViewLayout: layout), image1: "home_unselected", image2: "home_selected")
         //search
-        let searchNavController  = tempNavController(rootController: HomeController(collectionViewLayout: layout), image1: "search_unselected", image2: "search_selected")
+        let searchNavController  = tempNavController(rootController: UserSearchController(collectionViewLayout: layout), image1: "search_unselected", image2: "search_selected")
         // like
         let likeNavController  = tempNavController(rootController: HomeController(collectionViewLayout: layout), image1: "like_unselected", image2: "like_selected")
         //addPhot
