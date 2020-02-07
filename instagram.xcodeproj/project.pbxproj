@@ -29,6 +29,7 @@
 		FCC5F51123E0AA3F00185AFA /*  HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5F51023E0AA3F00185AFA /*  HomeController.swift */; };
 		FCC98A4C23D8E7C300DBAD2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCC98A4B23D8E7C300DBAD2E /* GoogleService-Info.plist */; };
 		FCCF381523EC543F008B796C /* UserSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCF381423EC543F008B796C /* UserSearchController.swift */; };
+		FCCF381723EC5D1F008B796C /* UserSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCF381623EC5D1F008B796C /* UserSearchCell.swift */; };
 		FCD5C83723E90067008CC0FF /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5C83623E90067008CC0FF /* CustomImageView.swift */; };
 		FCD5C83923E90B65008CC0FF /* HomePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5C83823E90B65008CC0FF /* HomePostCell.swift */; };
 		FCD7678223E7367100565523 /* SharePhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD7678123E7367100565523 /* SharePhotoController.swift */; };
@@ -61,6 +62,7 @@
 		FCC5F51023E0AA3F00185AFA /*  HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " HomeController.swift"; sourceTree = "<group>"; };
 		FCC98A4B23D8E7C300DBAD2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCCF381423EC543F008B796C /* UserSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchController.swift; sourceTree = "<group>"; };
+		FCCF381623EC5D1F008B796C /* UserSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchCell.swift; sourceTree = "<group>"; };
 		FCD5C83623E90067008CC0FF /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		FCD5C83823E90B65008CC0FF /* HomePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostCell.swift; sourceTree = "<group>"; };
 		FCD7678123E7367100565523 /* SharePhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePhotoController.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				FCCF381423EC543F008B796C /* UserSearchController.swift */,
+				FCCF381623EC5D1F008B796C /* UserSearchCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				FCAADE4023EA0CC2002E5A22 /* User.swift in Sources */,
 				FC6E6D6623D891B1003CFAAA /* Extensions.swift in Sources */,
 				FCBB598F23E1F79F0006793F /* PhotoCell.swift in Sources */,
+				FCCF381723EC5D1F008B796C /* UserSearchCell.swift in Sources */,
 				FCBB598D23E1C59F0006793F /* PhotoSelectorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
